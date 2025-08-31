@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>*** BRING BACK THE CANYONERO SANDWICH!!! ***</title>
-    <audio autoplay loop>
+    <audio id="canyoneroMusic" autoplay loop>
         <source src="canyonero.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <script>
+        function playMusic() {
+            const audio = document.getElementById('canyoneroMusic');
+            audio.play().catch(e => console.log('Audio play failed:', e));
+        }
+    </script>
     <style>
         body {
             background: #000080 url('data:image/gif;base64,R0lGODlhEAAQAPIAAAAAAP///8zMzJmZmWZmZjMzMwAAAAAAACH5BAAAAAAALAAAAAAQABAAAAMyCLrc/jDKSau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru987//AoHBILBqPyKRyySwAADs=') repeat;
@@ -147,6 +153,30 @@
             to { transform: translateY(-10px); }
         }
         
+        .play-button {
+            background: linear-gradient(45deg, #ff0000, #ffff00);
+            color: #ffffff;
+            border: 5px solid #00ff00;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000000;
+            cursor: pointer;
+            animation: pulse 1.5s ease-in-out infinite;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .play-button:hover {
+            background: linear-gradient(45deg, #ffff00, #ff0000);
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px #ff0000; }
+            50% { transform: scale(1.05); box-shadow: 0 0 40px #ffff00; }
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
@@ -174,6 +204,10 @@
         <div class="under-construction">
             <img src="data:image/gif;base64,R0lGODlhQAAwAPcAAP///wAAAP//AP/AAP8A/wD/AP8AAMzMzJmZmWZmZjMzMwAAzAAAmQAAZgAAMwD/zAD/mQD/ZgD/MwDMzADMmQDMZgDMMwCZzACZmQCZZgCZMwBmzABmmQBmZgBmMwAzzAAzmQAzZgAzM8z/zMz/mcz/Zsz/M8zMzMzMmczMZszMM8yZzMyZmcyZZsyZM8xmzMxmmcxmZsxmM8wzzMwzmcwzZswzM5n/zJn/mZn/Zpn/M5nMzJnMmZnMZpnMM5mZzJmZmZmZZpmZM5lmzJlmmZlmZplmM5kzzJkzmZkzZpkzM2b/zGb/mWb/ZmX/M2bMzGbMmWbMZmbMM2aZzGaZmWaZZmaZM2ZmzGZmmWZmZmZmM2YzzGYzmWYzZmYzMzP/zDP/mTP/ZjP/MzPMzDPMmTPMZjPMNnLCKikRaDADN++lfgkuTArJcqOAhHVOJiKbEkUQEzuKLdoEVyZ7sZMH0wXW" alt="Under Construction">
             <br><b>UNDER CONSTRUCTION SINCE 1994!</b>
+        </div>
+        
+        <div class="play-button" onclick="playMusic()">
+            🎵 CLICK TO HEAR THE CANYONERO THEME SONG! 🎵
         </div>
         
         <div class="visitor-counter">
