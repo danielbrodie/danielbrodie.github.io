@@ -7,12 +7,7 @@
         <source src="canyonero.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    <script>
-        function playMusic() {
-            const audio = document.getElementById('canyoneroMusic');
-            audio.play().catch(e => console.log('Audio play failed:', e));
-        }
-    </script>
+    <script src="app.js"></script>
     <style>
         body {
             background: #000080 url('data:image/gif;base64,R0lGODlhEAAQAPIAAAAAAP///8zMzJmZmWZmZjMzMwAAAAAAACH5BAAAAAAALAAAAAAQABAAAAMyCLrc/jDKSau9OOvNu/9gKI5kaZ5oqq5s675wLM90bd94ru987//AoHBILBqPyKRyySwAADs=') repeat;
@@ -206,7 +201,7 @@
             <br><b>UNDER CONSTRUCTION SINCE 1994!</b>
         </div>
         
-        <div class="play-button" onclick="playMusic()">
+        <div class="play-button">
             🎵 CLICK TO HEAR THE CANYONERO THEME SONG! 🎵
         </div>
         
